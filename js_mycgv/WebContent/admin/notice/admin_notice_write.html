@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MYCGV</title>
+</head>
+<body>
+	<!-- header -->
+	<iframe src="http://localhost:9000/mycgv/header.html"
+			scrolling="no" width="100%" height="300px" frameborder=0></iframe>	
+	
+	
+	<!-- content -->
+	<div class="content">
+		<section class="board">
+			<h1>관리자 - 공지사항</h1>
+			<form name="writeForm" action="#" metho="get">
+				<table border="1">
+					<tr>
+						<th>제목</th>
+						<td>
+							<input type="text" name="btitle">
+						</td>
+					</tr>
+					<tr>
+						<th>내용</th>
+						<td>
+							<textarea rows="5" cols="30" name="ncontent"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<tr>
+							<td colspan="2">
+								<button type="button">등록완료</button>
+								<button type="button">다시쓰기</button>
+								<a href="admin_notice_list.html">
+									<button type="button">리스트</button>
+								</a>
+								<a href="http://localhost:9000/mycgv/index.html">
+									<button type="button">홈으로</button>
+								</a>
+							</td>
+						</tr>
+					</tr>
+				</table>
+			</form>
+		</section>
+	</div>
+	
+	<!-- footer -->
+	<iframe src="http://localhost:9000/mycgv/footer.html"
+			scrolling="no" width="100%" height="500px" frameborder=0></iframe>
+</body>
+</html>

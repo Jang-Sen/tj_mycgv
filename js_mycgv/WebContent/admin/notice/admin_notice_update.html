@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MYCGV</title>
+</head>
+<body>
+	<!-- header -->
+	<iframe src="http://localhost:9000/mycgv/header.html"
+			scrolling="no" width="100%" height="300px" frameborder=0></iframe>
+	
+	
+	<!-- content -->
+	<div class="content">
+		<section class="admin">
+			<h1>관리자 - 공지사항</h1>
+			<form name="updateForm" action="#" method="get">
+				<table border="1">
+					<tr>
+						<th>제목</th>
+						<td>
+							<input type="text" name="btitle" value="CGV 공지사항 입니다.">
+						</td>
+					</tr>
+					<tr>
+						<th>내용</th>
+						<td>
+							<textarea rows="5" cols="30" name="bcontent">스즈메 문단속 재밌어요~</textarea>
+						</td>
+					</tr>
+					<tr>
+						<th>작성자</th>
+						<td>
+							<input type="text" name="id" value="hong1234">
+						</td>
+						<tr>
+							<td colspan="2">
+								<button type="button">수정완료</button>
+								<button type="button">다시쓰기</button>
+								<a href="admin_notice_content.html">
+									<button type="button">이전페이지</button>
+								</a>
+								<a href="admin_notice_list.html">
+									<button type="button">리스트</button>
+								</a>
+							</td>
+						</tr>
+					</tr>
+				</table>
+			</form>
+		</section>
+	</div>
+	
+	<!-- footer -->
+	<iframe src="http://localhost:9000/mycgv/footer.html"
+			scrolling="no" width="100%" height="500px" frameborder=0></iframe>
+</body>
+</html>

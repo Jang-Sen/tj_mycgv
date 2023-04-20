@@ -1,0 +1,29 @@
+/***************************************
+	commons style sheet
+***************************************/
+* {
+	padding:0px; margin:0px;
+}
+
+/***************************************
+	Header style sheet
+***************************************/
+header {
+	background-image:url("http://localhost:9000/mycgv/images/bg_header.gif");
+	height:149px;
+}
+.header_menu {
+	border:1px solid red;
+	width:1000px;
+	margin:auto;
+}
+/***************************************
+	Index-Content style sheet
+***************************************/
+.section1 {
+	background-image:url("http://localhost:9000/mycgv/images/carousel_bg.png");
+}
+.section1_d1, .section2, .section3 {
+	width:1000px; margin:auto;
+	border:1px solid blue;
+}
