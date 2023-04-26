@@ -2,89 +2,116 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>MYCGV</title>
+<title>js_mycgv</title>
+<link rel="stylesheet" href="http://localhost:9000/js_mycgv/css/mycgv.css">
 </head>
 <body>
 	<!-- header -->
 	<iframe src="http://localhost:9000/js_mycgv/header.html"
-			scrolling="no" width="100%" height="300px" frameborder=0></iframe>
-	
+			scrolling="no" width="100%" height="149px" frameborder=0></iframe>	
 	
 	<!-- content -->
 	<div class="content">
 		<section class="join">
-			<h1>회원가입</h1>
-			<form action="submit.php" method="post">
-		<label for="id">아이디</label>
-		<input type="text" id="id" name="id" placeholder="8글자 이상 입력해주세요." required>
-		<button type="button" class="btn" onclick="checkDuplication()">중복확인</button><br><br>
-
-		<label for="password">비밀번호</label>
-		<input type="password" id="password" name="password" required><br><br>
-
-		<label for="password-confirm">비밀번호 확인</label>
-		<input type="password" id="password-confirm" name="password-confirm" required><br><br>
-
-		<label for="name">성명</label>
-		<input type="text" id="name" name="name" required><br><br>
-
-		<label>성별</label>
-		<label for="male">남</label>
-		<input type="radio" id="male" name="gender" value="male" required>
-		<label for="female">여</label>
-		<input type="radio" id="female" name="gender" value="female" required><br><br>
-
-		<label for="email">이메일</label>
-		<input type="email" id="email" name="email" required> @
-		<input type="email" id="email2" name="email2" required>
-		<select>
-			<option value = "default">선택</option>
-			<option value = "naver.com">네이버</option>
-			<option value = "nate.com">네이트</option>
-			<option value = "daum.net">다음</option>
-			<option value = "google.com">구글</option>
-		</select><br><br>
-
-		<label for="address">주소</label>
-		<input type="text" id="address" name="address" required>
-		<button type="button" class="btn">주소찾기</button><br><br>
-
-		<label for="address-details">상세주소</label>
-		<input type="text" id="address-details" name="address-details"><br><br>
-
-		<label for="phone">휴대폰</label>
-		<input type="radio" name="tel" value="skt">SKT
-		<input type="radio" name="tel" value="lg">LG U+
-		<input type="radio" name="tel" value="kt">KT
-		<input type="tel" id="phone" name="phone" required><br><br>
-
-		<label for="hobby">취미</label>
-		<label for="hobby1">영화보기</label>
-		<input type="checkbox" id="hobby1" name="hobby" value="hobby1">
-		<label for="hobby2">등산하기</label>
-		<input type="checkbox" id="hobby2" name="hobby" value="hobby2">
-		<label for="hobby3">게임하기</label>
-		<input type="checkbox" id="hobby3" name="hobby" value="hobby3">
-		<label for="hobby4">잠자기</label>
-		<input type="checkbox" id="hobby4" name="hobby" value="hobby4"><br><br>
-
-		<label for="intro">자기소개</label>
-		<textarea id="intro" name="intro" rows="5" cols="50"></textarea><br><br>
-
-		<input type="submit" value="가입하기">
-		<input type="reset" value="다시입력">
-	</form>
-
-	<script>
-		function checkDuplication() {
-			// 중복 체크 로직을 추가하세요.
-		}
-	</script>
+			<h1 class="title">회원가입</h1>
+			<form name="joinForm" action="#" method="get">
+				<ul>
+					<li>
+						<label>아이디</label>
+						<input type="text" name="id" 
+							placeholder="*8자 이상 영문으로 입력해주세요" class="input1">
+						<button type="button" class="btn_style2">중복체크</button>
+					</li>
+					<li>
+						<label>비밀번호</label>
+						<input type="password" name="pass" class="input1">
+					</li>
+					<li>
+						<label>비밀번호 확인</label>
+						<input type="password" name="cpass" class="input1">
+					</li>
+					<li>
+						<label>성명</label>
+						<input type="text" name="name" class="input1">
+					</li>
+					<li>
+						<label>성별</label>
+						<input type="radio" name="gender"><span>남자</span> 
+						<input type="radio" name="gender"><span>여자</span>
+					</li>
+					<li>
+						<label>이메일</label>
+						<input type="text" name="email1" > @
+						<input type="text" name="email2" >
+						<select>
+							<option value="default">선택</option>
+							<option value="naver.com">네이버</option>
+							<option value="google.com">구글</option>
+							<option value="daum.net">다음</option>
+							<option value="korea.com">코리아</option>
+						</select>
+					</li>
+					<li>
+						<label>주소</label>
+						<input type="text" name="addr1" class="input1">
+						<button type="button" class="btn_style2">주소찾기</button>
+					</li>
+					<li>
+						<label>상세주소</label>
+						<input type="text" name="addr2" class="input1">
+					</li>
+					<li>
+						<label>휴대폰</label>
+						<input type="radio" name="tel" value="skt"><span>SKT</span>
+						<input type="radio" name="tel" value="lgu+"><span>LGU+</span>
+						<input type="radio" name="tel" value="kt"><span>KT</span>
+						<select name="phone1">
+							<option value="default">선택</option>
+							<option value="011">011</option>
+							<option value="010">010</option>
+							<option value="017">017</option>
+						</select>
+						- <input type="text" name="phone2">
+						- <input type="text" name="phone3">				
+					</li>
+					<li>
+						<label>취미</label>
+						<input type="checkbox" name="hobby" value="영화보기"><span>영화보기</span>
+						<input type="checkbox" name="hobby" value="등산하기"><span>등산하기</span>
+						<input type="checkbox" name="hobby" value="게임하기"><span>게임하기</span>
+						<input type="checkbox" name="hobby" value="잠자기"><span>잠자기</span>
+					</li>
+					<li>
+						<label>자기소개</label>
+						<textarea name="intro" placeholder="*200자 이내로 작성해주세요"></textarea>
+					</li>
+					<li>
+						<button type="button" class="btn_style">가입하기</button>
+						<button type="reset" class="btn_style">다시입력</button>
+					</li>			
+				</ul>
+			</form>
 		</section>
 	</div>
 	
 	<!-- footer -->
 	<iframe src="http://localhost:9000/js_mycgv/footer.html"
-			scrolling="no" width="100%" height="500px" frameborder=0></iframe>
+			scrolling="no" width="100%" height="500px" frameborder=0></iframe>	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
