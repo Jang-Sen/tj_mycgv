@@ -354,6 +354,12 @@ form[name='joinForm'] ul li:last-child button:first-child{
 	margin-right:10px;
 }
 
+/* #cmsg {
+	border: 1px soild blue;
+	display: block;
+	margin-left: 300px;
+} */
+
 /*****************************
 	Mypage style sheet
 ******************************/

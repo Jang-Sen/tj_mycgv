@@ -5,6 +5,7 @@
 <title>js_mycgv</title>
 <link rel="stylesheet" href="http://localhost:9000/js_mycgv/css/mycgv.css">
 <script src= "http://localhost:9000/js_mycgv/js/mycgv_javascript.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
 	<!-- header -->
@@ -28,7 +29,9 @@
 					</li>
 					<li>
 						<label>비밀번호 확인</label>
-						<input type="password" name="cpass" placeholder="8자 이상 영문(대소문자 구분), 특수문자 포함"  class="input1" id= "cpass">
+						<input type="password" name="cpass" placeholder="8자 이상 영문(대소문자 구분), 특수문자 포함"  class="input1" id= "cpass"
+						onblur= "passCheck()">
+						<span id= "cmsg"></span>
 					</li>
 					<li>
 						<label>이름</label>
@@ -43,18 +46,19 @@
 						<label>이메일</label>
 						<input type="text" name="email1" id= "email1"> @
 						<input type="text" name="email2" id= "email2">
-						<select id= "email3">
+						<select id= "email3" onchange= "emailCheck()">
 							<option value="default">선택</option>
 							<option value="naver.com">naver.com</option>
 							<option value="nate.com">nate.com</option>
-							<option value="google.com">google.com</option>
+							<option value="gmail.com">google.com</option>
 							<option value="daum.net">daum.net</option>
+							<option value="self">직접입력</option>
 						</select>
 					</li>
 					<li>
 						<label>주소</label>
 						<input type="text" name="addr1" class="input1" id= "addr1">
-						<button type="button" class="btn_style2">주소찾기</button>
+						<button type="button" class="btn_style2" onclick= "searchAddr()">주소찾기</button>
 					</li>
 					<li>
 						<label>상세주소</label>

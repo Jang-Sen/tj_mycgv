@@ -1,4 +1,90 @@
 /******************************************************
+				주소찾기 폼 - 글쓰기
+ ******************************************************/
+function boardFormCheck(){
+	let btitle = document.getElementById("btitle");
+	if (btitle.value == ""){
+		alert("제목을 입력해주세요.");
+		btitle.focus();
+	} else{
+		// 서버전송
+		writeForm.submit();
+	}
+}
+
+/******************************************************
+		회원가입 폼 - 주소찾기 : kakao API 
+ ******************************************************/
+function searchAddr(){
+	new daum.Postcode({
+        oncomplete: function(data) {
+        	// data = {zonecode: "12345", address: "서울시 강남구...",,,,}
+        	/*alert(data.address);*/
+        	document.getElementById("addr1").value = data.address;
+        	document.getElementById("addr2").focus();
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+        }
+    }).open();
+}
+
+/******************************************************
+		회원가입 폼 - 비밀번호 & 비밀번호 확인 
+ ******************************************************/
+function emailCheck(){
+	let emial2 = document.getElementById("email2");
+	let emial3 = document.getElementById("email3");
+	
+	if (email3.value == "default"){
+		/*alert("이메일 주소를 선택해주세요.");*/
+		email3.focus();
+		email2.value = "";
+	} else if (email3.value == "self"){
+		email2.value = "";
+		email2.focus();
+	} else{
+		email2.value = email3.value;
+	}
+}
+
+/******************************************************
+		회원가입 폼 - 비밀번호 & 비밀번호 확인 
+ ******************************************************/
+function passCheck(){
+	let pass = document.getElementById("pass");
+	let cpass = document.getElementById("cpass");
+	let cmsg = document.getElementById("cmsg");
+	
+	// pass, cpass의 값이 있는 경우에만 체크
+	if (pass.value != ""){
+		if (cpass.value != ""){
+			if (pass.value == cpass.value){
+				// alert("패스워드가 일치합니다.");
+				cmsg.innerHTML = "비밀번호가 일치합니다.";
+				cmsg.style.color = "blue";
+				cmsg.style.display = "block";
+				cmsg.style.padding = "3px 0";
+				cmsg.style.fontSize = "11px";
+				document.getElementById("name").focus();
+			} else{
+				// alert("패스워드가 일치하지 않습니다. 다시 입력해주세요.");
+				cmsg.innerHTML = "비밀번호가 일치하지 않습니다. 다시 입력해주세요";
+				cmsg.style.color = "red";
+				cmsg.style.display = "block";
+				cmsg.style.padding = "3px 0";
+				cmsg.style.fontSize = "11px";
+				pass.value = "";
+				cpass.value = "";
+				pass.focus();
+			}
+			
+		}
+	
+	}
+	
+}
+
+/******************************************************
 					회원가입 폼 
  ******************************************************/
 function joinCheck(){
@@ -20,11 +106,11 @@ function joinCheck(){
 		id.focus();
 		return false;
 	} else if (pass.value == ""){
-		alert("패스워드를 입력해주세요.");
+		alert("비밀번호를 입력해주세요.");
 		pass.focus();
 		return false;
 	} else if (cpass.value == ""){
-		alert("패스워드 확인을 입력해주세요.");
+		alert("비밀번호 확인을 입력해주세요.");
 		cpass.focus();
 		return false;
 	} else if (name.value == ""){
