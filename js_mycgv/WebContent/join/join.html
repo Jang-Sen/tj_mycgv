@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <title>js_mycgv</title>
 <link rel="stylesheet" href="http://localhost:9000/js_mycgv/css/mycgv.css">
-<script src= "http://localhost:9000/js_mycgv/js/mycgv_javascript.js"></script>
+<script src= "http://localhost:9000/js_mycgv/js/jquery-3.6.4.min.js"></script>
+<script src= "http://localhost:9000/js_mycgv/js/mycgv_jquery.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </head>
 <body>
@@ -29,8 +30,7 @@
 					</li>
 					<li>
 						<label>비밀번호 확인</label>
-						<input type="password" name="cpass" placeholder="8자 이상 영문(대소문자 구분), 특수문자 포함"  class="input1" id= "cpass"
-						onblur= "passCheck()">
+						<input type="password" name="cpass" placeholder="8자 이상 영문(대소문자 구분), 특수문자 포함"  class="input1" id= "cpass">
 						<span id= "cmsg"></span>
 					</li>
 					<li>
@@ -39,14 +39,14 @@
 					</li>
 					<li>
 						<label>성별</label>
-						<input type="radio" name="gender"><span>남자</span>
-						<input type="radio" name="gender"><span>여자</span>
+						<input type="radio" name="gender" value="m"><span>남자</span>
+						<input type="radio" name="gender" value="f"><span>여자</span>
 					</li>
 					<li>
 						<label>이메일</label>
 						<input type="text" name="email1" id= "email1"> @
 						<input type="text" name="email2" id= "email2">
-						<select id= "email3" onchange= "emailCheck()">
+						<select id= "email3">
 							<option value="default">선택</option>
 							<option value="naver.com">naver.com</option>
 							<option value="nate.com">nate.com</option>
@@ -58,7 +58,7 @@
 					<li>
 						<label>주소</label>
 						<input type="text" name="addr1" class="input1" id= "addr1">
-						<button type="button" class="btn_style2" onclick= "searchAddr()">주소찾기</button>
+						<button type="button" class="btn_style2" id="btnSearchAddr">주소찾기</button>
 					</li>
 					<li>
 						<label>상세주소</label>
@@ -90,7 +90,7 @@
 						<textarea name="intro" placeholder="*200자 이내로 작성해주세요"></textarea>
 					</li>
 					<li>
-						<button type="button" class="btn_style" onclick= "joinCheck()">가입하기</button>
+						<button type="button" class="btn_style" id="btnJoin">가입하기</button>
 						<button type="reset" class="btn_style">다시입력</button>
 					</li>			
 				</ul>
@@ -103,19 +103,3 @@
 			scrolling="no" width="100%" height="500px" frameborder=0></iframe>	
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
